@@ -4,7 +4,7 @@ public class containsDuplicateIII {
 		TreeSet<Long> set = new TreeSet<Long>();
 		for(int i = 0; i < nums.length(); i++) {
 			long temp = (long)nums[i];
-			if((set.floor(temp) != null && temp - set.floor(temp) <= (long)t) || (set.ceiling(c) != null && temp - set.ceiling(c) <= (long)t)) return true;
+			if((set.floor(temp) != null && temp - set.floor(temp) <= (long)t) || (set.ceiling(c) != null && set.ceiling(c) - temp <= (long)t)) return true;
 			set.add(c);
 			if(i >= k) set.remove((long)nums[i - k]);
 		}
